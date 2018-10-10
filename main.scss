@@ -19,6 +19,26 @@ body {
     position: relative;
 }
 
+.level-options{
+    position: absolute;
+    z-index: 999;
+    display:none;
+
+    ul{
+        list-style: none;
+        background-color:$windows-light-gray;
+        border: 2px outset darkgray;
+        
+        li{
+            padding: 3px;
+            &:hover {
+                background-color: $windows-blue;
+                color: white;
+            }  
+        }
+    }
+}
+
 .button {
     background-color: $windows-light-gray;
     border: 4px outset darkgray;

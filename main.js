@@ -1,12 +1,12 @@
-// // DEFAULT MINES
-// MINES = 40;
-// HEIGHT = 20;
-// WIDTH = 15;
+// DEFAULT MINES
+MINES = 40;
+HEIGHT = 16;
+WIDTH = 16;
 
 //BEGINNER LEVEL
-MINES = 10;
-WIDTH = 8;
-HEIGHT = 8;
+MINESBEGINNER = 10;
+WIDTHBEGINNER = 8;
+HEIGHTBEGINNER = 8;
 
 //INTERMEDIATE LEVEL
 MINESINTERMEDIATE = 40;
@@ -20,7 +20,19 @@ HEIGHTEXPERT = 24
 
 TIMER = false;
 
-function getUniqueRandomIndexesIn2DArray(table, indexes) {
+var button = $(".level-button");
+button.click(function(event){
+    event.preventDefault();
+    $(".level-options").toggle()
+})
+
+// var beginnerButton = $(."level-options__beginner");
+// var intermediateButton = $(".level-options__intermediate");
+// var expertButton = $(".level-options__expert");
+
+
+
+function getUniqueRandomIndexesIn2DArray(indexes) {
     indexes = indexes ? indexes : [];
     for (var i = indexes.length; i < MINES; i++) {
         var random_cell = Math.floor(Math.random() * WIDTH); 
@@ -28,7 +40,7 @@ function getUniqueRandomIndexesIn2DArray(table, indexes) {
         for (var j = 0; j < indexes.length; j++) {
             if (indexes[j][0] === random_cell &&
                 indexes[j][1] === random_row) {
-                return arguments.callee(table, indexes);
+                return arguments.callee(indexes);
             }
         }
         indexes.push([random_row, random_cell]); // a criacao da tabela comeca pelo row e depois pelo cell (row tr = y | cell td = x) // ERRO 1
