@@ -156,6 +156,8 @@ body {
 
     #field {
         border: 4px inset $windows-light-gray;
+        display: flex;
+        justify-content: center;
 
         table {
             border-collapse: collapse;
