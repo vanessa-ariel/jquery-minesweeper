@@ -32,7 +32,7 @@ button.click(function(event){
 
 
 
-function getUniqueRandomIndexesIn2DArray(indexes) {
+function getUniqueRandomIndexesIn2DArray(table, indexes) {
     indexes = indexes ? indexes : [];
     for (var i = indexes.length; i < MINES; i++) {
         var random_cell = Math.floor(Math.random() * WIDTH); 
@@ -40,7 +40,7 @@ function getUniqueRandomIndexesIn2DArray(indexes) {
         for (var j = 0; j < indexes.length; j++) {
             if (indexes[j][0] === random_cell &&
                 indexes[j][1] === random_row) {
-                return arguments.callee(indexes);
+                return arguments.callee(table, indexes);
             }
         }
         indexes.push([random_row, random_cell]); // a criacao da tabela comeca pelo row e depois pelo cell (row tr = y | cell td = x) // ERRO 1
