@@ -216,27 +216,24 @@ if (beginnerButton.click(function () {
     MINES = MINESBEGINNER;
     HEIGHT = HEIGHTBEGINNER;
     criarTabela();
-})
-) 
-{
+})) {
 } 
-
 if (intermediateButton.click(function () {
     $("tr").remove();
     WIDTH = WIDTHINTERMEDIATE;
     MINES = MINESINTERMEDIATE;
     HEIGHT = HEIGHTINTERMEDIATE;
     criarTabela();
-})
-) {
+})) {
 } 
-
 if (expertButton.click(function () {
     $("tr").remove();
     WIDTH = WIDTHEXPERT;
     MINES = MINESEXPERT;
     HEIGHT = HEIGHTEXPERT;
     criarTabela();
-})
-) {
+})) {
 }
+
+
+
